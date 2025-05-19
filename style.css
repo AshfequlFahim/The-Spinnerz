@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Remove any existing background color */
+  /* background-color: #1e88e5; */
+  overflow: hidden;
+  /* Set the background image */
+  background-image: url("spinner_bg.png"); /* Replace with your image path and filename */
+  background-size: cover; /* Adjust as needed: cover, contain, auto, etc. */
+  background-repeat: repeat; /* The pattern seems to repeat */
+  /* You might not need background-position depending on the desired effect */
+  /* background-position: center; */
+}
+
+/* ... rest of your CSS ... */
+
+.spinner-container {
+  width: 320px; /* Slightly larger */
+  height: 320px; /* Slightly larger */
+  position: relative;
+}
+
+.lobe {
+  position: absolute;
+  width: 110px; /* Larger lobes */
+  height: 110px; /* Larger lobes */
+  border-radius: 50%;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.4);
+  border: 4px solid #000; /* Add a black border */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center each lobe initially */
+}
+
+.lobe-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px; /* Larger center */
+  height: 55px; /* Larger center */
+  background-color: #fff; /* White center */
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.lobe-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px; /* Larger ring */
+  height: 90px; /* Larger ring */
+  border: 8px solid rgba(255, 255, 255, 0.3); /* Lighter ring */
+  border-radius: 50%;
+}
+
+.lobe-segment {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-36px); /* Adjusted translateY */
+  width: 12px; /* Larger segment width */
+  height: 32px; /* Larger segment height */
+  border-radius: 6px;
+}
+
+/* Position the three outer lobes closer to the center */
+.lobe:nth-child(1) {
+  /* Yellow */
+  transform: translate(-50%, -50%) translate(100px, 0); /* Moved closer */
+  background-color: #ffc107;
+}
+
+.lobe:nth-child(2) {
+  /* Pink */
+  transform: translate(-50%, -50%) rotate(120deg) translate(100px, 0)
+    rotate(-120deg); /* Moved closer */
+  background-color: #f50057;
+}
+
+.lobe:nth-child(3) {
+  /* Green */
+  transform: translate(-50%, -50%) rotate(240deg) translate(100px, 0)
+    rotate(-240deg); /* Moved closer */
+  background-color: #00e676;
+}
+
+/* Style for the central purple lobe */
+.center-piece {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center it */
+  width: 120px; /* Larger center */
+  height: 120px; /* Larger center */
+  background-color: #673ab7; /* Vibrant purple */
+  border-radius: 50%;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.5);
+  border: 3px solid #000; /* Add a black border to the center too */
+  z-index: 1; /* Ensure it's above the other lobes if needed */
+}
+.center-ring{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px; /* Larger ring */
+  height: 100px; /* Larger ring */
+  border: 10px solid rgba(68, 0, 255, 0.466); 
+  border-radius: 100%;
+}
+
+#spinner {
+  width: 320px; /* Match container size */
+  height: 320px; /* Match container size */
+  position: relative;
+  background-color: transparent;
+  border-radius: 50%; /* Make the container circular for visual consistency */
+  display: block;
+}
